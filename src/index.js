@@ -1,17 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
 
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
+
+import reducer from "./reducer";
+
+import FetchTweets from "./FetchTweets";
+import Tweets from "./Tweets";
+
+import "./styles.scss";
+
+const store = createStore(reducer, applyMiddleware(thunk));
+
+const Application = store => {
+  return (
+    <div className="Application">
+      <h1>Fake Tweet Stream</h1>
+      <FetchTweets />
+      <Tweets />
+    </div>
+  );
+};
+
+const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <Provider store={store}>
+    <Application />
+  </Provider>,
+  rootElement
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
