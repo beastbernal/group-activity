@@ -17,9 +17,9 @@ export const addTweets = tweets => ({
   payload: { tweets }
 });
 
-export const fetchGithub = () => {
+export const fetchGithub = (username) => {
   return dispatch => {
-    fetch("https://api.github.com/users/beastbernal/repos?sort=updated")
+    fetch('https://api.github.com/users/'+ username +'/repos?sort=updated')
       .then(response => response.json())
       .then(response => {
         console.log("response", response);
