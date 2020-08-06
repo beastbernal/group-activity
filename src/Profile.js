@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, ButtonGroup, Divider, H5, Switch } from "@blueprintjs/core";
+import { Button, ButtonGroup, Divider, Switch } from "@blueprintjs/core";
 
 const Profile = ({ profile }) => {
   return (

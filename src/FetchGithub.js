@@ -1,4 +1,4 @@
-import React, { useState, useEffect }  from "react";
+import React, { useState }  from "react";
 import { connect } from "react-redux";
 import { fetchGithub } from "./actions";
 import { Button, Icon, Alert } from "@blueprintjs/core";
@@ -6,6 +6,8 @@ import { Button, Icon, Alert } from "@blueprintjs/core";
 const FetchGithub = ({ fetchGithub }) => {
   const [username, setUsername] = useState('beastbernal');
   const [isOpenError, setIsOpenError] = useState(false);
+
+  setIsOpenError(false);
   
   const changeUsername = event => {
     setUsername(event.target.value);
