@@ -7,11 +7,11 @@ import thunk from "redux-thunk";
 
 import reducer from "./reducer";
 
-import FetchTweets from "./FetchTweets";
+// import FetchTweets from "./FetchTweets";
 import FetchGithub from "./FetchGithub";
-import Tweets from "./Tweets";
+// import Tweets from "./Tweets";
 
-import { Button, Card, Classes, Elevation, H5, Label, Slider, Switch } from "@blueprintjs/core";
+import {  Card, Elevation} from "@blueprintjs/core";
  
 
 
