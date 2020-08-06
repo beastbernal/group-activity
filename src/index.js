@@ -37,7 +37,7 @@ const Application = store => {
         <div className="bp3-progress-bar bp3-intent-success">
           <div className="bp3-progress-meter"></div>
         </div>
-        <h5><a href="#">Obteniendo los repos por username:</a></h5>
+        <h5>Obteniendo los repos por username:</h5>
         <FetchGithub/>
         <Profiles/>
         {/* <Button>Submit</Button> */}
